@@ -132,6 +132,6 @@ LOCAL_CFLAGS := -DUSE_FILE32API
 
 include $(BUILD_STATIC_LIBRARY)
 
-$(call import-module,jpeg8d)
-$(call import-module,platform_external_libpng)
-$(call import-module,platform_external_libxml2)
+$(call import-module,external/jpeg8d)
+$(call import-module,external/platform_external_libpng)
+$(call import-module,external/platform_external_libxml2)
