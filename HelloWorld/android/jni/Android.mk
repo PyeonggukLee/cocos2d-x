@@ -24,5 +24,3 @@ $(call import-module,external/platform_external_libxml2)
 $(call import-module,HelloWorld/Classes)
 $(call import-module,cocos2dx)
 $(call import-module,CocosDenshion/android)
-
-include $(subdirs)
