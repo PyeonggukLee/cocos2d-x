@@ -56,6 +56,7 @@ bool AppDelegate::applicationDidFinishLaunching()
 #ifdef JS_OBFUSCATED
     ScriptingCore::getInstance()->runScript("game.js");
 #else
+    ScriptingCore::getInstance()->reset();
     ScriptingCore::getInstance()->runScript("tests-boot-jsb.js");
 #endif
     return true;
