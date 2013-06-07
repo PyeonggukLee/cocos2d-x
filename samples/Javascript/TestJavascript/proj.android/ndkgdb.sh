@@ -39,7 +39,7 @@ set -x
 
 "${SDK_ROOT}"/platform-tools/adb shell am force-stop "${APP_ANDROID_NAME}"
 
-NDK_MODULE_PATH="${COCOS2DX_ROOT}":"${COCOS2DX_ROOT}"/cocos2dx/platform/third_party/android/prebuilt \
+NDK_MODULE_PATH="${COCOS2DX_ROOT}":"${COCOS2DX_ROOT}"/cocos2dx/platform/third_party/android/prebuilt:/Users/folecr/ws/folecr/cocos \
     "${NDK_ROOT}"/ndk-gdb \
     --adb="${SDK_ROOT}"/platform-tools/adb \
     --verbose \
