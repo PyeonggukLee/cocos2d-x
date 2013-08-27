@@ -95,5 +95,6 @@ rm -f "$APP_ANDROID_ROOT"/assets/Images/test_1021x1024_a8.pvr.gz
 
 echo "Using prebuilt externals"
 "$NDK_ROOT"/ndk-build -C "$APP_ANDROID_ROOT" $* \
+    -j7 \
     NDK_LOG=1 V=1 \
     "NDK_MODULE_PATH=${COCOS2DX_ROOT}:${COCOS2DX_ROOT}/cocos2dx/platform/third_party/android/prebuilt"
