@@ -70,6 +70,9 @@ public class Cocos2dxHelper {
 	// ===========================================================
 
 	public static void init(final Activity activity) {
+
+        android.util.Log.d("Cocos2dxHelper", "init(activity = " + activity + ")");
+
 		final ApplicationInfo applicationInfo = activity.getApplicationInfo();
 		
 		Cocos2dxHelper.sActivity = activity;
