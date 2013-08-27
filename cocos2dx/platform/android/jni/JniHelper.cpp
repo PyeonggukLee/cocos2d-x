@@ -59,12 +59,16 @@ namespace cocos2d {
     JNIEnv* JniHelper::env = NULL;
 
     JavaVM* JniHelper::getJavaVM() {
+        LOGD("JniHelper::getJavaVM");
+
         pthread_t thisthread = pthread_self();
         LOGD("JniHelper::getJavaVM(), pthread_self() = %X", thisthread);
         return _psJavaVM;
     }
 
     void JniHelper::setJavaVM(JavaVM *javaVM) {
+        LOGD("JniHelper::setJavaVM");
+
         pthread_t thisthread = pthread_self();
         LOGD("JniHelper::setJavaVM(%p), pthread_self() = %X", javaVM, thisthread);
         _psJavaVM = javaVM;
@@ -73,6 +77,8 @@ namespace cocos2d {
     }
 
     bool JniHelper::cacheEnv(JavaVM* jvm) {
+        LOGD("JniHelper::cacheEnv");
+
         JNIEnv* _env = NULL;
         // get jni environment
         jint ret = jvm->GetEnv((void**)&_env, JNI_VERSION_1_4);
@@ -117,6 +123,8 @@ namespace cocos2d {
     }
 
     bool JniHelper::setClassLoaderFrom(jobject nativeactivityinstance) {
+        LOGD("JniHelper::setClassLoaderFrom");
+
         JniMethodInfo _getclassloaderMethod;
         if (!JniHelper::getMethodInfo_DefaultClassLoader(_getclassloaderMethod,
                                                          "android/app/NativeActivity",
@@ -150,6 +158,11 @@ namespace cocos2d {
                                         const char *className, 
                                         const char *methodName,
                                         const char *paramCode) {
+        LOGD("JniHelper::getStaticMethodInfo(&methodinfo, %s, %s, %s)",
+             className,
+             methodName,
+             paramCode);
+
         if ((NULL == className) ||
             (NULL == methodName) ||
             (NULL == paramCode)) {
@@ -184,6 +197,11 @@ namespace cocos2d {
                                                      const char *className,
                                                      const char *methodName,
                                                      const char *paramCode) {
+        LOGD("JniHelper::getMethodInfo_DefaultClassLoader(&methodinfo, %s, %s, %s)",
+             className,
+             methodName,
+             paramCode);
+
         if ((NULL == className) ||
             (NULL == methodName) ||
             (NULL == paramCode)) {
@@ -218,6 +236,11 @@ namespace cocos2d {
                                   const char *className,
                                   const char *methodName,
                                   const char *paramCode) {
+        LOGD("JniHelper::getMethodInfo(&methodinfo, %s, %s, %s)",
+             className,
+             methodName,
+             paramCode);
+
         if ((NULL == className) ||
             (NULL == methodName) ||
             (NULL == paramCode)) {
